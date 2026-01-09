@@ -28,6 +28,6 @@ while running:
 
     tetris.drawBlocks()
 
-    clock.tick(20)
+    clock.tick(10000000)
     pygame.display.update()
 

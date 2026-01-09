@@ -1,6 +1,6 @@
 import pygame
 import random
-from shapes import shape_options
+from shapes import shapeOptions
 
 class Tetris:
     def __init__(self, screen):
@@ -45,7 +45,8 @@ class Tetris:
     def createTetriminos(self):
         if self.genTetriminos:
             # print(self.getBlockStart())
-            block = random.choice(shape_options)
+            block = shapeOptions(None)
+            print(block)
             startingPoint = None        
 
             startingPoint = self.getBlockStart()
@@ -54,7 +55,7 @@ class Tetris:
 
             if self.getBlockStart != None:
                 row_count = 0
-                for row in block:
+                for row in block[1]:
                     col_count = startingPoint
                     for tile in row:
                         if tile == 1:
@@ -77,7 +78,6 @@ class Tetris:
                         pygame.draw.rect(self.screen, (220,20,60), everything_blocks)
                 else:
                     pygame.draw.rect(self.screen, (255,255,255), everything_blocks, 1)
-                    print('drew block:', everything_point)
 
     def moveBlocks(self):
         keys = pygame.key.get_pressed()

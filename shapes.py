@@ -49,9 +49,6 @@ t_shape = [
 #when the player presses Z, they need to return the name of the shape they are using, and what position it is in (based on 1 or 0)
 #give them back the rotated shape
 
-#dosent work:
-
-
 shapes = {
     "t_shape": t_shape,
     "n_shape": n_shape,
@@ -64,7 +61,5 @@ def shapeOptions(rotate):
 
     # return rand_choice[rand_num]
 
-    print(list(shapes.keys()))
-    print(shapes[t_shape])
-
-print(shapeOptions(None))
+    dec = random.choice(list(shapes.items()))
+    return dec
